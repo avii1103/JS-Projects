@@ -1,25 +1,25 @@
-let secondsElapsed = 0;
-let interval = null;
-const time = document.getElementById("time")
+let secondselapsed=0;
+let interval=null;
+const time=document.getElementById("time");
 
-function padStart(value) {
-    return String(value).padStart(2, "0")
+function padding(value); {
+    return String(value).padStart(2,"0")
 }
 
-function setTime() {
-    const minutes = Math.floor(secondsElapsed / 60)
-    const seconds = secondsElapsed % 60
-    time.innerHTML = `${padStart(minutes)}:${padStart(seconds)}` ;
+function settime() {
+    const minutes=Math.floor(secondselapsed/60)
+    const seconds=secondselapsed%60
+    time.innerHTML=`${padding(minutes)}:${padding(seconds)}`;
 }
 
 function timer() {
-    secondsElapsed++;
-    setTime()
+    secondselapsed=secondselapsed+1
+    settime();
 }
 
 function startClock() {
-    if (interval) stopClock()
-    interval = setInterval(timer, 1000)
+    if (interval) stopClock();
+    interval=setInterval(timer,1000);
 }
 
 function stopClock() {
@@ -28,6 +28,6 @@ function stopClock() {
 
 function resetClock() {
     stopClock()
-    secondsElapsed = 0;
-    setTime()
+    secondselapsed=0
+    settime()
 }
